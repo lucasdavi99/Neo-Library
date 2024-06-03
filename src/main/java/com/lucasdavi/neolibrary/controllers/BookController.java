@@ -7,17 +7,20 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.util.List;
+
+@Controller
+@RequestMapping("/books")
 public class BookController {
     @Autowired
     BookService bookService;
 
-    @PostMapping("/newbook")
+    @PostMapping
     public ResponseEntity<Object> newBook(@RequestBody @Validated BookDTO bookDTO) {
         try {
             var book = new Book();
@@ -26,6 +29,12 @@ public class BookController {
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
+    }
 
+    @GetMapping
+    public String getAllBooks(Model model) {
+        List<Book> books = bookService.findAll();
+        model.addAttribute("books", books);
+        return "books";
     }
 }

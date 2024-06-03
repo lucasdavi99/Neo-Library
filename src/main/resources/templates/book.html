@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Library - todos os Livros</title>
+</head>
+<body>
+<h1>Lista de Livros</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Autor(es)</th>
+        <th>Gênero(s)</th>
+        <th>Ano</th>
+        <th>Descrição</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="livro : ${books}">
+        <td th:text="${livro.title}"></td>
+        <td th:text="${livro.authors}"></td>
+        <td th:text="${livro.genres}"></td>
+        <td th:text="${livro.year}"></td>
+        <td th:text="${livro.description}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
