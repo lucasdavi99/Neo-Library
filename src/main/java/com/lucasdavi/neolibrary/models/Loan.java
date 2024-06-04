@@ -1,6 +1,7 @@
 package com.lucasdavi.neolibrary.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -11,7 +12,9 @@ public class Loan {
 
     @Id
     private String id;
+    @DBRef
     private Book bookId;
+    @DBRef
     private User userId;
     private LocalDate loanDate;
     private LocalDate returnDate;
