@@ -14,17 +14,21 @@ public class Book {
     private List<String> authors;
     private List<String> genres;
     private String description;
-    private int year;
+    private String isbn;
+    private Integer quantity;
+    private Integer year;
 
     public Book() {
     }
 
-    public Book(String id, String title, List<String> authors, List<String> genres, String description, int year) {
+    public Book(String id, String title, List<String> authors, List<String> genres, String description, String isbn, Integer quantity, Integer year) {
         this.id = id;
         this.title = title;
         this.authors = authors;
         this.genres = genres;
         this.description = description;
+        this.isbn = isbn;
+        this.quantity = quantity;
         this.year = year;
     }
 
@@ -68,11 +72,27 @@ public class Book {
         this.description = description;
     }
 
-    public int getYear() {
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
