@@ -34,7 +34,7 @@ public class BookService {
     }
 
     //Método para atualizar um livro
-public Book update(String id, Book book) {
+    public Book update(String id, Book book) {
         Book bookToUpdate = bookRepository.findById(id).orElse(null);
         if (bookToUpdate == null) {
             return null;
