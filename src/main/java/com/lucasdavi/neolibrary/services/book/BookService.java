@@ -1,4 +1,4 @@
-package com.lucasdavi.neolibrary.services;
+package com.lucasdavi.neolibrary.services.book;
 
 import com.lucasdavi.neolibrary.models.Book;
 import com.lucasdavi.neolibrary.repositories.BookRepository;
@@ -9,6 +9,9 @@ import java.util.List;
 
 @Service
 public class BookService {
+
+    @Autowired
+    private BookMethods bookMethods;
 
     @Autowired
     private BookRepository bookRepository;
@@ -25,6 +28,9 @@ public class BookService {
 
     //Método para salvar um livro
     public Book save(Book book) {
+        if (book.getIsbn() == null || book.getIsbn().isEmpty()) {
+            book.setIsbn(bookMethods.generateISBN());
+        }
         return bookRepository.save(book);
     }
 

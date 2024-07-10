@@ -2,7 +2,7 @@ package com.lucasdavi.neolibrary.controllers;
 
 import com.lucasdavi.neolibrary.dtos.BookDTO;
 import com.lucasdavi.neolibrary.models.Book;
-import com.lucasdavi.neolibrary.services.BookService;
+import com.lucasdavi.neolibrary.services.book.BookService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

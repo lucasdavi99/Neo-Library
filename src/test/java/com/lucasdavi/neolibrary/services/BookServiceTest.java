@@ -2,6 +2,7 @@ package com.lucasdavi.neolibrary.services;
 
 import com.lucasdavi.neolibrary.models.Book;
 import com.lucasdavi.neolibrary.repositories.BookRepository;
+import com.lucasdavi.neolibrary.services.book.BookService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

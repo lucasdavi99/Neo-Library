@@ -76,6 +76,9 @@ public class Book {
         return isbn;
     }
 
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
 
     public Integer getQuantity() {
         return quantity;
