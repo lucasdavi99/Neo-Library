@@ -5,12 +5,13 @@ import com.lucasdavi.neolibrary.models.Book;
 import com.lucasdavi.neolibrary.services.book.BookService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -20,14 +21,22 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-    @PostMapping
-    public ResponseEntity<Object> newBook(@RequestBody @Validated BookDTO bookDTO) {
+    @GetMapping("/new")
+    public String showNewBookForm(Model model) {
+        model.addAttribute("bookDTO", new BookDTO("", List.of(), List.of(), "", 0, 0, null));
+        return "new-book";
+    }
+
+    @PostMapping("/new")
+    public String newBook(@ModelAttribute @Validated BookDTO bookDTO, Model model) {
         try {
             var book = new Book();
             BeanUtils.copyProperties(bookDTO, book);
-            return ResponseEntity.status(HttpStatus.CREATED).body(bookService.save(book));
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            bookService.save(book);
+            return "redirect:/books";
+        } catch (Exception e) {
+            model.addAttribute("errorMessage", e.getMessage());
+            return "new-book";
         }
     }
 
