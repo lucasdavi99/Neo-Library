@@ -1,0 +1,35 @@
+body {
+  background-color: #001635;
+  flex: auto;
+}
+
+.box-logo {
+  text-align: center;
+}
+
+.register-login {
+  text-align: center;
+  /*width: auto;*/
+}
+
+.btn-group {
+  width: 109.302px;
+  background: #7ddd30;
+  width: 200px;
+  margin: 9px;
+}
+
+#btn-register {
+  /*margin-left: 50px;*/
+}
+
+#title {
+  text-align: center;
+  color: #7ddd30;
+}
+
+#description {
+  color: #7ddd30;
+  text-align: center;
+}
+

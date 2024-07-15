@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>NeoLibrary</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="/assets/css/new-book.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    <h1>Novo Livro</h1>
+    <form th:action="@{/books/new}" th:object="${bookDTO}" method="post">
+        <div class="field"><label class="form-label" for="title">Titulo</label><input class="form-control" type="text"
+                id="title" th:field="*{title}"></div>
+        <div class="field"><label class="form-label" for="authors">Autor ou Autores&nbsp; (separado por
+                vírgula)</label><input class="form-control" type="text" id="authors" th:field="*{authors}"></div>
+        <div class="field"><label class="form-label" for="genres">Gêneros&nbsp; (separado por vírgula)</label><input
+                class="form-control" type="text" id="genres" th:field="*{genres}"></div>
+        <div class="field"><label class="form-label" for="description">Descrição</label><textarea class="form-control"
+                id="description" th:field="*{description}"></textarea></div>
+        <div class="field"><label class="form-label" for="year">Ano de Lançamento</label><input class="form-control"
+                type="number" id="year" th:field="*{year}"></div>
+        <div class="field"><label class="form-label" for="quantity">Quantidade de Unidades</label><input
+                class="form-control" type="number" id="quantity" th:field="*{quantity}"></div>
+        <div class="field"><button class="btn btn-primary" type="submit">Cadastrar</button></div>
+    </form>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bs-init.js"></script>
+    <script src="/assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="/assets/js/Lightbox-Gallery.js"></script>
+</body>
+
+</html>
