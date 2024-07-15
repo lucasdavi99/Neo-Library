@@ -9,5 +9,6 @@ public record BookDTO(
         String description,
         Integer year,
         Integer quantity,
-        String isbn
+        String isbn,
+        String coverImage
 ){}

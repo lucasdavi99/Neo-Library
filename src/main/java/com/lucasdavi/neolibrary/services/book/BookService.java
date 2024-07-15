@@ -50,6 +50,7 @@ public class BookService {
         bookToUpdate.setGenres(book.getGenres());
         bookToUpdate.setDescription(book.getDescription());
         bookToUpdate.setYear(book.getYear());
+        bookToUpdate.setCoverImage(book.getCoverImage());
         return bookRepository.save(bookToUpdate);
     }
 }

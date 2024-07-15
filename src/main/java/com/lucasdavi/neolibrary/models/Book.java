@@ -17,11 +17,12 @@ public class Book {
     private String isbn;
     private Integer quantity;
     private Integer year;
+    private String coverImage;
 
     public Book() {
     }
 
-    public Book(String id, String title, List<String> authors, List<String> genres, String description, String isbn, Integer quantity, Integer year) {
+    public Book(String id, String title, List<String> authors, List<String> genres, String description, String isbn, Integer quantity, Integer year, String coverImage) {
         this.id = id;
         this.title = title;
         this.authors = authors;
@@ -30,6 +31,7 @@ public class Book {
         this.isbn = isbn;
         this.quantity = quantity;
         this.year = year;
+        this.coverImage = coverImage;
     }
 
     public String getId() {
@@ -94,6 +96,14 @@ public class Book {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public String getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(String coverImage) {
+        this.coverImage = coverImage;
     }
 
     @Override
