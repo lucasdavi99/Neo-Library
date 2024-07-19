@@ -23,7 +23,7 @@ public class BookController {
 
     @GetMapping("/new")
     public String showNewBookForm(Model model) {
-        model.addAttribute("bookDTO", new BookDTO("", List.of(), List.of(), "", 0, 0, null));
+        model.addAttribute("bookDTO", new BookDTO("", List.of(), List.of(), "", 0, 0, null, ""));
         return "new-book";
     }
 

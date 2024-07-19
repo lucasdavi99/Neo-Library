@@ -9,27 +9,33 @@
     <link rel="stylesheet" href="/assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <link rel="stylesheet" href="/assets/css/new-book.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/pica@8.0.0/dist/pica.min.js"></script>
 </head>
 
 <body>
     <h1>Novo Livro</h1>
+    <h4 style="color: var(--bs-body-bg);">Adicione um novo livro aqui.</h4>
     <form th:action="@{/books/new}" th:object="${bookDTO}" method="post">
-        <div class="field"><label class="form-label" for="title">Titulo</label><input class="form-control" type="text"
-                id="title" th:field="*{title}"></div>
+        <div class="field"><label class="form-label" for="new-title">Titulo</label><input class="form-control"
+                type="text" id="new-title" th:field="*{title}"></div>
         <div class="field"><label class="form-label" for="authors">Autor ou Autores&nbsp; (separado por
                 vírgula)</label><input class="form-control" type="text" id="authors" th:field="*{authors}"></div>
         <div class="field"><label class="form-label" for="genres">Gêneros&nbsp; (separado por vírgula)</label><input
                 class="form-control" type="text" id="genres" th:field="*{genres}"></div>
-        <div class="field"><label class="form-label" for="description">Descrição</label><textarea class="form-control"
-                id="description" th:field="*{description}"></textarea></div>
+        <div class="field"><label class="form-label" for="book-description">Descrição</label><textarea
+                class="form-control" id="book-description" th:field="*{description}"></textarea></div>
         <div class="field"><label class="form-label" for="year">Ano de Lançamento</label><input class="form-control"
                 type="number" id="year" th:field="*{year}"></div>
         <div class="field"><label class="form-label" for="quantity">Quantidade de Unidades</label><input
                 class="form-control" type="number" id="quantity" th:field="*{quantity}"></div>
+        <div class="field"><label class="form-label" for="coverImageUrl">URL da Imagem</label><input
+                class="form-control" type="text" id="coverImageUrl" th:field="*{coverImage}"
+                oninput="updateImagePreview()"></div>
+        <div class="field"><img id="coverImagePreview" class="preview-image" src=""></div>
         <div class="field"><button class="btn btn-primary" type="submit">Cadastrar</button></div>
     </form>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/js/bs-init.js"></script>
+    <script src="/assets/js/image-preview.js"></script>
     <script src="/assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="/assets/js/Lightbox-Gallery.js"></script>
 </body>

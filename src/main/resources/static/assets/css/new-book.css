@@ -3,15 +3,35 @@ h1 {
   padding: 20px;
 }
 
-.field {
-  color: #7ddd30;
+#short-h4 {
+  color: white;
+  padding: 20px;
 }
 
-.btn {
+.field {
+  color: #7ddd30;
+  padding-top: 20px;
+}
+
+form {
+  padding: 50px;
+}
+
+.form-control {
+  width: 50%;
+}
+
+.form-label {
+  font-size: 20px;
+}
+
+#coverImagePreview {
+  width: 200px;
+  height: auto;
 }
 
 .btn {
   background-color: #7ddd30;
-  color: blueviolet;
+  color: #001635;
 }
 
