@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/assets/css/Growing-Search-Bar-Animated-Text-Input.css">
     <link rel="stylesheet" href="/assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <link rel="stylesheet" href="/assets/css/Navbar-Right-Links-Dark-icons.css">
-    <link rel="stylesheet" href="/assets/css/new-book.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
@@ -29,9 +28,9 @@
                         <path
                             d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z">
                         </path>
-                    </svg></span><span>Neo Library</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
-                data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span
-                    class="navbar-toggler-icon"></span></button>
+                    </svg></span><span style="color: var(--bs-navbar-brand-color);">Neo Library</span></a><button
+                data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span
+                    class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-5">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Livros</a></li>
@@ -45,8 +44,9 @@
             </div>
         </div>
     </nav>
-    <div class="book-card" th:each="livro : ${book}"><img id="book-image" th:src="${livro.coverImage}">
-        <div class="description-card" style="width: 200px;">
+    <div class="book-card" th:each="livro : ${book}"><img id="book-image" th:src="${livro.coverImage}"
+            style="width: 300px;height: 440px;">
+        <div class="description-card-onpage" style="width: 200px;">
             <h4 id="book-title-onpage" th:text="${livro.title}">Title</h4>
             <p class="small-description">Autor:&nbsp;<span th:text="${livro.authors}">Text</span></p>
             <p class="small-description">Gênero:&nbsp;<span th:text="${livro.genres}">Text</span></p>
@@ -54,9 +54,17 @@
             <p class="small-description">Quantidade:&nbsp;<span th:text="${livro.quantity}">Text</span></p>
         </div>
     </div>
-    <div th:each="livro : ${book}" style="margin-left: 15px;">
+    <div th:each="livro : ${book}" style="margin-left: 33px;">
         <h5 style="color: var(--bs-body-bg);width: 100px;">Descrição:</h5>
-        <p style="color: var(--bs-body-bg);" th:text="${livro.description}">Paragraph</p>
+        <p style="color: var(--bs-body-bg);" th:text="${livro.description}">Lorem ipsum dolor sit amet. Non dolores
+            dolore est doloremque neque aut sint doloribus eos molestias alias et maiores ipsa sed voluptas consectetur.
+            In inventore reiciendis aut reiciendis tenetur eos debitis magnam qui quae veniam vel facere maiores quo
+            fugit voluptas eum ipsam consequatur! Est quis Quis et exercitationem nostrum ut galisum galisum sit tempora
+            accusantium hic dolore molestiae ab iusto quia qui assumenda consequatur. Vel recusandae sint ut cupiditate
+            minus At ipsum blanditiis id esse veritatis et quos error! Id assumenda similique At autem earum et amet
+            officia sit dicta suscipit ut expedita adipisci. Qui rerum voluptas eum ullam repellendus a error dolorum
+            est molestias doloremque et ipsa quia. Ad quisquam possimus et amet odit et neque rerum in expedita tenetur.
+            Et corrupti ipsam ut mollitia consequatur non iure voluptatibus et maiores rerum vel nobis dolore.</p>
     </div>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/js/image-preview.js"></script>

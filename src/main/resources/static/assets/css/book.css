@@ -5,3 +5,17 @@
   bottom: 180px;
 }
 
+h5 {
+  color: #7ddd30;
+}
+
+span {
+  /*color: var(--bs-body-bg) !important;*/
+}
+
+.description-card-onpage {
+  position: relative;
+  left: 321px;
+  bottom: 356px;
+}
+
