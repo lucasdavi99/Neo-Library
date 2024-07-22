@@ -1,19 +1,29 @@
 .book-card {
-  margin: 50px;
+  margin: 29px;
+  height: auto;
 }
 
-img {
+#book-image {
   width: 150px;
   height: 220px;
+  cursor: pointer;
 }
 
 #book-title {
   color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  bottom: 100px;
 }
 
 .small-description {
   color: white;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.small-description span {
+  font-weight: 400;
 }
 
 .description-card {

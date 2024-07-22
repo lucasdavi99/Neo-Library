@@ -7,6 +7,7 @@
     <title>NeoLibrary</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/css/book.css">
     <link rel="stylesheet" href="/assets/css/books.css">
     <link rel="stylesheet" href="/assets/css/Growing-Search-Bar-Animated-Text-Input.css">
     <link rel="stylesheet" href="/assets/css/Lightbox-Gallery-baguetteBox.min.css">
@@ -44,7 +45,7 @@
             </div>
         </div>
     </nav>
-    <div class="book-card" th:each="livro : ${books}"><img th:src="${livro.coverImage}">
+    <div class="book-card" th:each="livro : ${books}"><img id="book-image" th:src="${livro.coverImage}">
         <div class="description-card">
             <h4 id="book-title" th:text="${livro.title}">aaaaaaaaa</h4>
             <p class="small-description" th:text="${livro.authors}">ola</p>
