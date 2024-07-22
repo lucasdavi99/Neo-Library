@@ -46,4 +46,11 @@ public class BookController {
         model.addAttribute("books", books);
         return "books";
     }
+
+    @GetMapping("/{id}")
+    public String getBookById(Model model, Long id) {
+        Book book = bookService.findById(String.valueOf(id));
+        model.addAttribute("book", book);
+        return "book";
+    }
 }
