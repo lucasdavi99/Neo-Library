@@ -27,15 +27,14 @@ public class BookController {
     @PostMapping("/new")
     public String newBook(@ModelAttribute @Validated BookDTO bookDTO, Model model) {
         try {
-            var book = new Book();
-            BeanUtils.copyProperties(bookDTO, book);
-            bookService.save(book);
+            bookService.save(bookDTO);
             return "redirect:/books";
         } catch (Exception e) {
             model.addAttribute("errorMessage", e.getMessage());
             return "new-book";
         }
     }
+
 
     @GetMapping
     public String getAllBooks(Model model) {

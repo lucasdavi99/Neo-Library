@@ -1,5 +1,6 @@
 package com.lucasdavi.neolibrary.services.book;
 
+import com.lucasdavi.neolibrary.dtos.BookDTO;
 import com.lucasdavi.neolibrary.models.Book;
 import com.lucasdavi.neolibrary.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,22 @@ public class BookService {
     }
 
     //Método para salvar um livro
-    public Book save(Book book) {
+    public Book save(BookDTO data) {
+
+        Book book = new Book();
+        book.setTitle(data.title());
+        book.setAuthors(data.authors());
+        book.setGenres(data.genres());
+        book.setDescription(data.description());
+        book.setYear(data.year());
+        book.setQuantity(data.quantity());
+        book.setIsbn(data.isbn());
+        book.setCoverImage(data.coverImage());
+
         if (book.getIsbn() == null || book.getIsbn().isEmpty()) {
             book.setIsbn(bookMethods.generateISBN());
         }
+
         return bookRepository.save(book);
     }
 
